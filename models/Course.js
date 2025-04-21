@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../DB').mongoose;
 
 const Coursechema = new mongoose.Schema({
   "_id": String,

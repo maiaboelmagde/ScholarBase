@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Faculties</title>
+  <link href="Styles/style.css" rel="stylesheet">
+</head>
+<body>
+  <h2>All Faculties</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Faculty ID</th>
+        <th>Faculty Name</th>
+        <th>Address</th>
+        <th>ZipCode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < allFaculties.length; i++) { %>
+        <tr>
+          <td data-label="Faculty ID"><%= allFaculties[i]._id %></td>
+          <td data-label="Faculty Name"><%= allFaculties[i].FacultyName %></td>
+          <td data-label="Address"><%= allFaculties[i].Address.Street + allFaculties[i].Address.City %></td>
+          <td data-label="ZipCode"><%= allFaculties[i].Address.ZipCode %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

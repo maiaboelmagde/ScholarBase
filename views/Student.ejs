@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Student</title>
+  <link rel="stylesheet" href="/Styles/style.css" >
+</head>
+<body>
+  <h2>All Courses</h2>
+  <a class="add-button" href="/add">+ Add New Student</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Faculty Name</th>
+        <th>Courses</th>
+        <th>Degree</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < allStudents.length; i++) { %>
+        <tr>
+          <td data-label="Student ID"><%= allStudents[i]._id %></td>
+          <td data-label="Student Name"><%= allStudents[i].FirstName +" "+allStudents[i].lastName %></td>
+          <td data-label="FacultyName"><%= allStudents[i].FacultyID?.FacultyName || 'N/A'%></td>
+          <td>
+            <ul>
+                <% for(let courseIndex = 0;courseIndex < allStudents[i].Courses.length; courseIndex++) { %>
+                    <li> <%=allStudents[i].Courses[courseIndex]?.CourseID?.CourseName || 'N/A' %></li>
+                <%}%>
+            </ul>
+          </td>
+          <td data-label="Final Mark"><%= allStudents[i].grade %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

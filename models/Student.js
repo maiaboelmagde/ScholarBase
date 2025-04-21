@@ -1,4 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('../DB').mongoose;
+require('../models/Faculty');
+require('../models/Course'); //even it's ok to require them at server.ja
 
 const StudentSchema = new mongoose.Schema({
   "FirstName" : String,

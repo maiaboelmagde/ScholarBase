@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Courses</title>
+  <link href="/Styles/style.css" rel="stylesheet">
+</head>
+<body>
+  <h2>All Courses</h2>
+  <a class="add-button" href="/Courses/add">+ Add New Course</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Course ID</th>
+        <th>Course Name</th>
+        <th>Final Mark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < allCourses.length; i++) { %>
+        <tr>
+          <td data-label="Course ID"><%= allCourses[i]._id %></td>
+          <td data-label="Course Name"><%= allCourses[i].CourseName %></td>
+          <td data-label="Final Mark"><%= allCourses[i].FinalMark %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
