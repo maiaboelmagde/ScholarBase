@@ -9,6 +9,18 @@ const getAllCourses = async (req, res) => {
     }
 };
 
+const getAddCourse = (req,res)=>{
+  res.render('addNewCourse.ejs');
+}
+
+const addCourse = async(req,res)=>{
+  const newCourse = new Course(req.body);
+  await newCourse.save();
+  res.redirect("/Courses");
+}
+
 module.exports = {
     getAllCourses,
+    getAddCourse,
+    addCourse
 }
