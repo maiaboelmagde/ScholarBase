@@ -52,6 +52,17 @@ th, td {
 tr:hover {
     background-color: #f1f1f1;
 }
+.binImg{
+    height: 3dvh;
+    width: 2dvw;
+    cursor:pointer;
+    padding: 2dvh 2dvw;
+}
+
+.binImg:hover{
+    background-color:red;
+    border-radius: 15px;
+}
 
 @media (max-width: 600px) {
     table, thead, tbody, th, td, tr {

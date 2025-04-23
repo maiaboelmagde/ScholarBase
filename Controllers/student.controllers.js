@@ -35,8 +35,21 @@ const AddStudent = async(req,res)=>{
     await newStudent.save();
     res.redirect('/Students');
 }
+
+const DeleteStudent = async(req,res)=>{
+    try{
+        const id = req.params.id;
+        await Students.findByIdAndDelete(id);
+        res.status(200).json({ message: "Student deleted" });
+    }catch(err){
+        console.log("Error deleting student:",err);
+        res.status(500).send("Server Error");
+    }
+
+}
 module.exports = {
     GetAllStudents,
     GetAddStudent,
-    AddStudent
+    AddStudent,
+    DeleteStudent
 }

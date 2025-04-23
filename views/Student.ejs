@@ -13,17 +13,18 @@
   <table>
     <thead>
       <tr>
-        <th>Student ID</th>
+        <th>Student seq_num</th>
         <th>Student Name</th>
         <th>Faculty Name</th>
         <th>Courses</th>
         <th>Degree</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% for(let i = 0; i < allStudents.length; i++) { %>
         <tr>
-          <td data-label="Student ID"><%= allStudents[i]._id %></td>
+          <td data-label="Student seq_num"><%= i+1 %></td>
           <td data-label="Student Name"><%= allStudents[i].FirstName +" "+allStudents[i].lastName %></td>
           <td data-label="FacultyName"><%= allStudents[i].FacultyID?.FacultyName || 'N/A'%></td>
           <td>
@@ -34,9 +35,12 @@
             </ul>
           </td>
           <td data-label="Final Mark"><%= allStudents[i].grade %></td>
+          <td><img src="Icons/bin.png" alt="" class="binImg" data-id = "<%=allStudents[i]._id %>" title="Delete Student"></td>
         </tr>
       <% } %>
     </tbody>
   </table>
+
+  <script src="Scripts/studentDeletionScript.js"></script>
 </body>
 </html>
